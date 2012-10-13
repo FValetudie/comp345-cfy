@@ -34,7 +34,7 @@ public:
 	virtual int		getArmorLevel() const;
 	virtual pos		getPosition() const;
 
-	virtual bool	moveTo(int, int);
+	// virtual bool	moveTo(int, int);
 	virtual bool	attack(Character &);
 	// virtual bool	takeWeapon(Weapon *);
 	// virtual bool	takeArmor(Armor *);

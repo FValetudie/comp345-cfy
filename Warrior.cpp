@@ -27,10 +27,10 @@ pos		Warrior::getPosition() const
 	return(this->_pos);
 }
 
-bool	Warrior::moveTo(int x, int y)
-{
-	return (this->_controller->move(this, x, y));
-}
+// bool	Warrior::moveTo(int x, int y)
+// {
+	// return (this->_controller->move(this, x, y));
+// }
 
 bool	Warrior::attack(Character & c)
 {

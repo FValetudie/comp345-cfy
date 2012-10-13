@@ -27,10 +27,10 @@ pos		Wizard::getPosition() const
 	return(this->_pos);
 }
 
-bool	Wizard::moveTo(int x, int y)
-{
-	return (this->_controller->move(this, x, y));
-}
+// bool	Wizard::moveTo(int x, int y)
+// {
+	// return (this->_controller->move(this, x, y));
+// }
 
 bool	Wizard::attack(Character & c)
 {

@@ -18,7 +18,7 @@ public:
 	int		getArmorLevel() const;
 	pos		getPosition() const;
 
-	bool	moveTo(int, int);
+	// bool	moveTo(int, int);
 	bool	attack(Character &);
 	// bool	takeWeapon(Weapon *);
 	// bool	takeArmor(Armor *);
