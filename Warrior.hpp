@@ -3,12 +3,6 @@
 
 #include			"Character.hpp"
 
-enum				eSpell
-{
-	DEATH_SPELL,
-	HEAL
-}
-
 class				Warrior : public Character
 {
 public:
@@ -20,10 +14,10 @@ public:
 
 	bool	moveTo(int, int);
 	bool	attack(Character &);
-	bool	takeWeapon(Weapon *);
-	bool	takeArmor(Armor *);
-	bool	dropWeapon();
-	bool	dropArmor();
+	// bool	takeWeapon(Weapon *);
+	// bool	takeArmor(Armor *);
+	// bool	dropWeapon();
+	// bool	dropArmor();
 	void	setMana(int);
 	void	setArmorLevel(int);
 	void	setLifePoint(int);

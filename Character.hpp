@@ -2,6 +2,8 @@
 #define				__COMP345_CHARACTER__
 
 #include			<iostream>
+// #include			"Weapon.hpp"
+// #include			"Armor.hpp"
 
 #define				MAX_LIFE	100
 #define				MAX_MANA	100
@@ -23,8 +25,8 @@ class				Character
 	int				_armorLevel;
 	int				_level;
 	pos				_pos;
-	Weapon			*_weapon;
-	Armor			*_armorItem;
+	// Weapon			*_weapon;
+	// Armor			*_armorItem;
 
 public:
 	virtual int		getLifePoint() const;
@@ -34,10 +36,10 @@ public:
 
 	virtual bool	moveTo(int, int);
 	virtual bool	attack(Character &);
-	virtual bool	takeWeapon(Weapon *);
-	virtual bool	takeArmor(Armor *);
-	virtual bool	dropWeapon(Weapon *);
-	virtual bool	dropArmor(Armor *);
+	// virtual bool	takeWeapon(Weapon *);
+	// virtual bool	takeArmor(Armor *);
+	// virtual bool	dropWeapon();
+	// virtual bool	dropArmor();
 	virtual void	setMana(int);
 	virtual void	setArmorLevel(int);
 	virtual void	setLifePoint(int);
