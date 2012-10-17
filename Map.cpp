@@ -4,9 +4,9 @@
 Map::Map(int w, int h)
 : _width(w), _height(h), _currentTurn(0)
 {
-	this->_map = (Case***)malloc((w) * sizeof(Case**));
+	this->_map = new Case**[w];//(Case***)malloc((w) * sizeof(Case**));
 	for (int i = 0; i < w; i++){
-		this->_map[i] = (Case**)malloc((h) * sizeof(Case*));
+		this->_map[i] = new Case*[h];//(Case**)malloc((h) * sizeof(Case*));
 		for (int j = 0; j < h; j++)
 			this->_map[i][j] = new Case();
 	}
@@ -17,9 +17,9 @@ Map::~Map()
 	for (int i = 0; i < this->_width; i++){
 		for (int j = 0; j < this->_height; j++)
 			delete this->_map[i][j];
-		free(this->_map[i]);
+		delete[] this->_map[i];
 	}
-	free(this->_map);
+	delete[] this->_map;
 }
 
 int		Map::getWidth() const
