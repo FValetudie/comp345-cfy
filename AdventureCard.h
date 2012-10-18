@@ -5,15 +5,15 @@
 using namespace std;
 
 class				AdventureCard{
-private:
-	int				id;
-	string			name;
-
 public:
 	AdventureCard(int,string);
 
 	int				getId();
 	string			getName();
+
+private:
+	int				id;
+	string			name;
 };
 
 #endif TALISMAN_ADVENTURECARD

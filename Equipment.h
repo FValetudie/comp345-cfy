@@ -2,17 +2,16 @@
 #define				TALISMAN_EQUIPMENT
 
 #include			<iostream>
-#include			<list>
+#include			<vector>
 #include			"AdventureCard.h"
 using namespace std;
 
 class				Equipment : public AdventureCard{
 public:
-	Equipment(int id, string name, list<string> restrictions);
-	list<string> getRestrictions() const;
-	void addRestriction(string restriction);
-	void remRestriction(string restriction);
+	Equipment(int id, string name, vector<string> specials);
+	vector<string>	getSpecials() const;
+	bool			hasSpecial(string);
 private:
-	list<string> restrictions;
+	vector<string>	specials;
 };
 #endif TALISMAN_EQUIPMENT

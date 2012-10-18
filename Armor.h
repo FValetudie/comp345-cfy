@@ -7,9 +7,12 @@
 using namespace std;
 
 class				Armor : public Equipment{
+public:
+	Armor(int id,string name,vector<string> specials,int roll);
+	int			getRollLimit();
+
 private:
-	string			name;
-	string			type;
+	int			rollLimit;
 };
 
 #endif TALISMAN_ARMOR

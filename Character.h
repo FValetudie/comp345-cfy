@@ -2,7 +2,7 @@
 #define						TALISMAN_CHARACTER
 
 #include					<iostream>
-#include					<list>
+#include					<vector>
 #include					"Equipment.h"
 
 using namespace		std;
@@ -11,7 +11,8 @@ class				Character
 {
 	public:
 	//--------------Accessors
-	int						getCharName() const;
+	Character(string name, int bStrength, int bCraft, int bHealth, int bFate, int gold, string align, vector<string> abilities /*Tile start*/);
+	string					getCharName() const;
 	int						getBaseStrength() const;
 	int						getBaseCraft() const;
 	int						getBaseHealth() const;
@@ -21,33 +22,35 @@ class				Character
 	int						getTotalHealth() const;
 	int						getTotalFate() const;
 	int						getGold() const;
-	int						getAlignment() const;
+	string					getAlignment() const;
 	int						getFate() const;
-	int						getStartTile() const;
+	vector<string>			getAbilities() const;
+	//Tile					getStartTile() const;
 
-	list<Equipment>			getEquipment() const;
-	list<Equipment>			getWeapons() const;
-	list<Equipment>			getArmor() const;
-	//list<Equipment>		getMagic() const;
+	vector<Equipment>		getEquipment() const;
+	vector<Equipment>		getWeapons() const;
+	vector<Equipment>		getArmor() const;
+	//vector<Equipment>		getMagic() const;
 
 	//[]Spell				getSpells() const;
-	//list<Trophy>			getTrophies() const;
-	//list<Follower>		getFollowers() const;
+	//vector<Trophy>		getTrophies() const;
+	//vector<Follower>		getFollowers() const;
 	int						getSkipTurns() const;
 	int						getToadTurns() const;
 	//Tile					getPosition();
 
 	//--------------Mutators
-	void					setTotalStrength(int strength);
-	void					setTotalCraft(int strength);
-	void					setTotalHealth(int health);
+	void					setTotalHealth(int newHealth);
 	void					setAlignment(string alignment);
 	void					setFate(int fate);
-
+	void					setGold(int gold);
 	//void					setPosition(Tile t);
 
 	//--------------Methods
 	bool					hasTalisman();
+
+	int						calcTotalStrength(int addStrength);
+	int						calcTotalCraft(int addCraft);
 
 	void					gainStrength(int strength);
 	void					loseStrength(int strength);
@@ -56,23 +59,21 @@ class				Character
 	void					gainHealth(int health);
 	void					loseHealth(int health);
 
-	void					gainEquipment(Equipment e);
-	void					loseEquipment(Equipment e);
+	void					gainEquipment(vector<Equipment> e);
+	void					loseEquipment(vector<Equipment> e);
 	//void					addSpell(Spell);
 	//void					useSpell(Spell);
 	//void					addTrophy(Trophy);
-	//void					useTrophies(list<Trophy>);
+	//void					useTrophies(vector<Trophy>);
 	//void					addFollower(Follower);
-	//void					loseFollower(list<Follower>);
-	void					addGold(int gold);
-	void					useGold(int gold);
+	//void					loseFollower(vector<Follower>);
 
 	int						skipTurns(int num);
 	int						toadTurns(int num);
 
 	virtual bool			attack(Character *c);
 	//virtual bool			attack(Enemy *e);
-	list<Equipment>			dropEquipment();
+	vector<Equipment>		dropEquipment();
 	void					heal();
 	void					death();
 
@@ -88,14 +89,16 @@ private:
 	int						totalHealth;
 	int						totalFate;
 
+	vector<string>			abilities;
+
 	int						gold;
 	string					alignment;
 	//Tile					startTile;
 
-	list<Equipment>	equipment;
+	vector<Equipment>		equipment;
 	//Spell					spells[3];
-	//list<Trophy>			trophies;
-	//list<Follower>		followers;
+	//vector<Trophy>		trophies;
+	//vector<Follower>		followers;
 	
 	int						skipTurns;
 	int						toadTurns;
