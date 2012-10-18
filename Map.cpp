@@ -7,8 +7,14 @@ Map::Map(int w, int h)
 	this->_map = new Case**[w];//(Case***)malloc((w) * sizeof(Case**));
 	for (int i = 0; i < w; i++){
 		this->_map[i] = new Case*[h];//(Case**)malloc((h) * sizeof(Case*));
-		for (int j = 0; j < h; j++)
-			this->_map[i][j] = new Case();
+		for (int j = 0; j < h; j++){
+			if (j >= (h / 3) && j <= h - (h / 3) && i >= (w / 3) && i <= w - (w / 3))
+				this->_map[i][j] = new Case(INNER_TERRITORIES);
+			else if (j >= (h / 5) && j <= h - (h / 5) && i >= (w / 5) && i <= w - (w / 5))
+				this->_map[i][j] = new Case(MIDDLE_TERRITORIES);
+			else
+				this->_map[i][j] = new Case();
+		}
 	}
 }
 
@@ -108,7 +114,13 @@ void		Map::draw()
 			int s = this->_map[j][i]->getCharactersList().size();
 			if (s > 0)
 				std::cout << s;
-			else
+			else if (this->_map[j][i]->getType() == OUTER_TERRITORIES)
+				std::cout << "*";
+			else if (this->_map[j][i]->getType() == MIDDLE_TERRITORIES)
+				std::cout << "=";
+			else if (this->_map[j][i]->getType() == INNER_TERRITORIES)
+				std::cout << "+";
+			else if (this->_map[j][i]->getType() == OUTER_TERRITORIES)
 				std::cout << " ";
 		}
 		std::cout << "|" << std::endl;

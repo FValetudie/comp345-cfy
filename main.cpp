@@ -11,7 +11,7 @@ int			main()
 	map->addCharacter(wiz, 0, 0);
 	std::cout << "Type \"quit\" to leave, \"move\" to move your character, etc." << std::endl;
 	map->draw();
-	for (int i = 10; i > 0; i--)
+	while (1)
 	{
 		if (!map->playNextTurn()){
 			map->draw();
