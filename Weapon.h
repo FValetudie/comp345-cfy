@@ -9,13 +9,11 @@ using namespace		std;
 
 class				Weapon : public Equipment{
 public:
-	Weapon(int id,string name,vector<string> specials,int strength,int craft);
+	Weapon(int id,string name,int strength);
 	int				getStrength() const;
-	int				getCraft() const;
 
 private:
 	int				strength;
-	int				craft;
 };
 
 #endif TALISMAN_WEAPON

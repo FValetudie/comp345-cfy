@@ -4,6 +4,8 @@
 #include					<iostream>
 #include					<vector>
 #include					"Equipment.h"
+#include					"Weapon.h"
+#include					"Armor.h"
 
 using namespace		std;
 
@@ -28,8 +30,10 @@ class				Character
 	//Tile					getStartTile() const;
 
 	vector<Equipment>		getEquipment() const;
-	vector<Equipment>		getWeapons() const;
-	vector<Equipment>		getArmor() const;
+	vector<Weapon>			getWeapons() const;
+	Weapon					getWeapon() const;
+	vector<Armor>			getArmors() const;
+	Armor					getArmor() const;
 	//vector<Equipment>		getMagic() const;
 
 	//[]Spell				getSpells() const;
@@ -44,6 +48,8 @@ class				Character
 	void					setAlignment(string alignment);
 	void					setFate(int fate);
 	void					setGold(int gold);
+	void					setArmor();
+	void					setWeapon();
 	//void					setPosition(Tile t);
 
 	//--------------Methods
@@ -88,6 +94,9 @@ private:
 	int						totalCraft;
 	int						totalHealth;
 	int						totalFate;
+
+	Weapon					weapon;
+	Armor					armor;
 
 	vector<string>			abilities;
 

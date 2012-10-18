@@ -2,13 +2,12 @@
 #define				TALISMAN_ARMOR
 
 #include			<iostream>
-#include			"AdventureCard.h"
 #include			"Equipment.h"
-using namespace std;
+using namespace		std;
 
 class				Armor : public Equipment{
 public:
-	Armor(int id,string name,vector<string> specials,int roll);
+	Armor(int id,string name,int roll);
 	int			getRollLimit();
 
 private:

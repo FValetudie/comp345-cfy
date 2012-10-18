@@ -8,10 +8,7 @@ using namespace std;
 
 class				Equipment : public AdventureCard{
 public:
-	Equipment(int id, string name, vector<string> specials);
-	vector<string>	getSpecials() const;
-	bool			hasSpecial(string);
+	Equipment(int id, string name);
 private:
-	vector<string>	specials;
 };
 #endif TALISMAN_EQUIPMENT

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-#include "Equipment.h"
 #include "Character.h"
 
 using namespace			std;
@@ -24,7 +23,7 @@ bool Character::attack(Character *c)
 
 int Character::calcTotalStrength(int s)
 {
-	//var s: The combination of valid roll/weapon
+	int str = baseStrength + getWeapon().getStrength;
 }
 
 int Character::calcTotalCraft(int c)
@@ -38,6 +37,39 @@ void Character::setAlignment(string a)
 
 void Character::setFate(int fate)
 {}
+
+void Character::setWeapon()
+{
+	int num;
+	cout << "Enter the number of the weapon you wish to use:" << endl;
+	for(int i=0; i < getWeapons().size(); i++)
+	{
+		string tmp = getWeapons()[i].getName();
+		cout << (i+1) << ". " << tmp << endl;
+	}
+	cin >> num;
+	weapon = getWeapons()[num-1];
+}
+
+Weapon Character::getWeapon() const
+{
+	
+}
+
+void Character::setArmor()
+{
+	int num;
+	cout << "Enter the number of the armor you wish to use:" << endl;
+	for(int i=0; i < getArmors().size(); i++)
+		cout << (i+1) << ". " << getArmors()[i].getName() << endl;
+	cin >> num;
+	weapon = getWeapons()[num-1];
+}
+
+Armor Character::getArmor() const
+{
+	
+}
 
 void Character::death()
 {}
@@ -77,7 +109,7 @@ int Character::getBaseCraft() const
 string Character::getAlignment() const
 {}
 
-vector<Equipment> Character::getArmor() const
+vector<Armor> Character::getArmors() const
 {}
 
 int Character::getBaseFate() const
@@ -110,7 +142,7 @@ int Character::getToadTurns() const
 vector<string> Character::getAbilities() const
 {}
 
-vector<Equipment> Character::getWeapons() const
+vector<Weapon> Character::getWeapons() const
 {}
 
 vector<Equipment> Character::dropEquipment()
