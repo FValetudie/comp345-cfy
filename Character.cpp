@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <typeinfo>
+#include <string>
 #include "Character.h"
 
 using namespace			std;
@@ -21,9 +23,9 @@ bool Character::attack(Character *c)
 //bool Character::attack(Enemy *e)
 //{}
 
-int Character::calcTotalStrength(int s)
+int Character::calcTotalStrength(int dice)
 {
-	int str = baseStrength + getWeapon().getStrength;
+	return baseStrength + weapon.getStrength + dice;
 }
 
 int Character::calcTotalCraft(int c)
@@ -95,7 +97,9 @@ void Character::loseStrength(int s)
 {}
 
 void Character::loseHealth(int h)
-{}
+{
+	if()
+}
 
 void Character::loseEquipment(vector<Equipment> e)
 {}
@@ -110,7 +114,10 @@ string Character::getAlignment() const
 {}
 
 vector<Armor> Character::getArmors() const
-{}
+{
+	for(int i=0; i < equipment.size(); i++)
+		if(typeid(equipment[i]).name().compare() ==0)
+}
 
 int Character::getBaseFate() const
 {}

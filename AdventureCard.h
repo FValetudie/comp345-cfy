@@ -16,4 +16,4 @@ private:
 	string			name;
 };
 
-#endif TALISMAN_ADVENTURECARD
+#endif				TALISMAN_ADVENTURECARD

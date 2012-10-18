@@ -14,4 +14,4 @@ private:
 	int			rollLimit;
 };
 
-#endif TALISMAN_ARMOR
+#endif				TALISMAN_ARMOR

@@ -1,3 +1,6 @@
+#ifndef				TALISMAN_AXE
+#define				TALISMAN_AXE
+
 #include <iostream>
 #include "Weapon.h"
 
@@ -10,3 +13,5 @@ public:
 private:
 	
 };
+
+#endif				TALISMAN_AXE

@@ -1,8 +1,9 @@
 #include			<iostream>
 #include			<vector>
 #include			"Warrior.h"
-#include			"Weapon.h"
-#include			"Armor.h"
+#include			"Sword.h"
+#include			"Axe.h"
+#include			"Shield.h"
 
 using namespace		std;
 
@@ -10,9 +11,17 @@ int main()
 {
 	Character *warrior = new Warrior();
 
-	vector<string> specials;
-	Equipment *sword = new Weapon(0, "Sword",specials,3,0);
-	warrior->gainEquipment(*sword);
+	Equipment *sword = new Sword();
+	Equipment *axe = new Axe();
+	Equipment *shield = new Shield();
+
+	vector<Equipment> equip(3,(*sword,*axe,*shield));
+	warrior->gainEquipment(equip);
+
+	//simulate rolled 3
+	warrior->calcTotalStrength(3);
+
+	cout << warrior->getTotalStrength();
 
 	return 0;
 }
