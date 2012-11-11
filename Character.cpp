@@ -37,8 +37,15 @@ void Character::setTotalHealth(int h)
 void Character::setAlignment(string a)
 {}
 
-void Character::setFate(int fate)
-{}
+void Character::useFate() // consume a fate coin
+{
+   int temp = totalFate - 1;
+   if (temp < 0)
+      totalFate = 0;
+   else
+      totalFate -= 1;
+
+}
 
 void Character::setWeapon()
 {
