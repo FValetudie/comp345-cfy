@@ -47,9 +47,9 @@ class				Character
 	void					setTotalHealth(int newHealth);
 	void					setAlignment(string alignment);
 
-	void					setFate(int fate);
-         void                                        replenishFate(int fate);  
-         void                                        gainFate(int fate); 
+	void				         useFate(int fate); // consume fate coin
+         void                                        replenishFate(int fate); // replace fate coins up to base amount
+         void                                        gainFate(int fate);  
   
 	void					setGold(int gold);
 	void					setArmor();
