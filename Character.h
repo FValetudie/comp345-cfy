@@ -79,9 +79,9 @@ class				Character
 
 	virtual bool			attack(Character *c);
 	//virtual bool			attack(Enemy *e);
-	vector<Equipment>		dropEquipment();
-	void					heal();
-	void					death();
+	vector<Equipment>		dropEquipment(); 
+//	void					heal(); 
+//	void					death();
 
 private:
 	string					charName;
