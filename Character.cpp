@@ -47,6 +47,26 @@ void Character::useFate() // consume a fate coin
 
 }
 
+void Character::gainFate(int fate)  
+{
+   if (fate>0)
+   {
+      totalFate += fate;
+   }   
+}
+
+void Character::replenishFate(int fate)
+{
+   if (fate>0)
+   {
+      int temp = totalFate + fate;
+      if (temp > baseFate)
+         totalfate = baseFate;
+      else
+         totalFate = temp; 
+   }
+}
+
 void Character::setWeapon()
 {
 	int num;
